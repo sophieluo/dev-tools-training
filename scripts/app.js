@@ -14,14 +14,14 @@ $('h1').append('<small>&nbsp&nbspsquash the bugs!</small>');
 
 	// the form redirects when it should just update the count of "E"s
 	$('form').on('submit', function(e){
+		e.preventDefault();
 		console.log('form submitted');
 		var input = $('input').eq(0).val();
-
+		var count = 0;
 		// should count occurrences of the letter "E"
 		// and update the display. instead always shows 0
 		for (var i = 0; i < input.length; i++){
 			// this loop doesn't find both es in  "supercalifragilisticexpialidocious"
-			var count = 0;
 			if (input[i] === "e"){
 				count = count +1;
 			}
@@ -36,7 +36,7 @@ $('h1').append('<small>&nbsp&nbspsquash the bugs!</small>');
 	    for (var i=0; i<5; i++) {
 	        $link = $('<a href="#" class="btn btn-link"></a>');
 	        $link.html('Link '+i);
-	        $link.on('click', function () {
+	        $link.click(function () {
 	            alert(i);
 	        });
 	        $ul.append($link);
