@@ -34,14 +34,15 @@ $('h1').append('<small>&nbsp&nbspsquash the bugs!</small>');
 	    var $link;
 	    var $ul = $('ul');
 	    for (var i=0; i<5; i++) {
-	        $link = $('<a href="#" class="btn btn-link"></a>');
+	        $link = $('<a href="#" class="btn btn-link" id=""></a>');
 	        $link.html('Link '+i);
-	        $link.click(function () {
-	            alert(i);
-	        });
 	        $ul.append($link);
+	        };
 	    }
-    }
 
     addLinks();
+		$('.btn-link').on('click',function() {
+			alert(this.id);
+		})
+
 	});
